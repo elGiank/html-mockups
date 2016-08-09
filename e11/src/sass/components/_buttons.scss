@@ -1,0 +1,23 @@
+.btn {
+  display: inline-block;
+  padding: .8rem 1.6rem;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.btn--contact {
+  align-self: center;
+  transition: all .5s;
+  &:hover {
+    border-color: $color-white;
+    background-color: $color-olive;
+    color: white;
+  }
+}
+
+.btn--olive-transparent {
+  border: 1px solid $color-olive;
+  color: $color-olive;
+}
+

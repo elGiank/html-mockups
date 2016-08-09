@@ -1,0 +1,61 @@
+.download-group {
+  background-color: white;
+  position: fixed;
+  bottom: .5rem;
+  left: .5rem;
+  width: 250px;
+  //max-height: 100px;
+  padding: .5rem 1rem;
+  border: 1px solid #f2f2f2; //#009be4; //#f2f2f2;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.28); //rgba(0, 155, 228, 0.28);
+  //  hacer esto con mas sombra para q se note mas arriba
+  overflow: hidden;
+}
+.download-group__title {
+  margin: 0;
+  margin-bottom: .5rem;
+  color: #003087;
+  font-weight: 400;
+  font-size: 1.25rem;
+
+  //margin-bottom: .5rem;
+  //margin-left: -1rem;
+  //margin-right: -1rem;
+  //padding-left: 1rem;
+  //padding-right: 1rem;
+  //border-bottom: 1px solid #d6d6d6;
+}
+
+.download-group__close {
+  float: right;
+  cursor: pointer;
+}
+
+.download-group__items {
+  @extend .list;
+  //margin: .25rem;
+}
+
+.download-group__item {
+  //margin-bottom: .5rem;
+}
+
+.download-item {
+  font-size: .85rem;
+  font-weight: 400;
+  color: $color-slate;
+  display: flex;
+}
+
+.download-item__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.download-item__indicator {
+  padding-left: .5rem;
+  color: black;
+  font-weight: 600;
+}

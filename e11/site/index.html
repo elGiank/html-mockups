@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Downloader design</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/415702625e.css" media="all">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100|Lato:400,700,300,100' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--<script src="https://use.fontawesome.com/415702625e.js"></script>-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="popup-background">
+    <div class="popup">
+        <div class="popup-header">
+            <i class="fa fa-bell popup-header__main-icon"></i>
+            <h3 class="popup-header__text">Docket Alerts</h3>
+            <i class="fa fa-times popup-header__close-icon"></i>
+        </div>
+        <div class="popup-body">
+            <div class="alert-actions">
+                <span class="alert-actions-counter">0 Alerts configured</span>
+                <button class="btn btn-view-all">
+                    <span class="btn__text">View All</span><span class="btn_icon"><i class="fa fa-magnifier"></i></span>
+                </button>
+                <div class="select-option select-option--add-alert">
+                    <button id="btnAddAlert" class="btn btn-select-option">
+                        <span class="btn__text">Add Alert</span><i class="fa fa-caret-down btn__caret"></i>
+                    </button>
+                    <ul id="selectlistAlerts" class="select-option-list" style="display: none;">
+                        <li class="select-option-list__item">
+                            <div class="select-option__item-text">All Dockets Updates</div>
+                            <div class="select-option__item-icon"><i class="fa fa-plus"></i></div>
+                        </li>
+                        <li class="select-option-list__item">
+                            <div class="select-option__item-text">Docket Category</div>
+                            <div class="select-option__item-icon"><i class="fa fa-pencil"></i></div>
+                        </li>
+                        <li class="select-option-list__item">
+                            <div class="select-option__item-text">Debtor</div>
+                            <div class="select-option__item-icon"><i class="fa fa-plus"></i></div>
+                        </li>
+                        <li class="select-option-list__item">
+                            <div class="select-option__item-text">Adversary Proceeding</div>
+                            <div class="select-option__item-icon"><i class="fa fa-plus"></i></div>
+                        </li>
+                        <li class="select-option-list__item">
+                            <div class="select-option__item-text">Related Dockets</div>
+                            <div class="select-option__item-icon"><i class="fa fa-pencil"></i></div>
+                        </li>
+                        <li class="select-option-list__item">
+                            <div class="select-option__item-text">Keyword</div>
+                            <div class="select-option__item-icon"><i class="fa fa-plus"></i></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="alert-config">
+                <h4 class="alert-config__title">All Docket Updates</h4>
+                <h5 class="alert-config__section-title"></h5>
+                <small class="alert-config__section-description"></small>
+                <input type="text" class="alert-config__recipients" placeholder="jhonsmith@"/>
+                <div class="checkbox">
+                    <i class="fa fa-check checkbox__icon"></i><span class="checkbox__text"></span>
+                </div>
+                <div class="alert-config__section-title"></div>
+                <div class="alert-config__section-description"></div>
+
+            </div>
+        </div>
+        <div class="popup-footer"></div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" ></script>
+<script src="js/app.js"></script>
+<script src="https://use.typekit.net/tcp3qrm.js"></script>
+<script>try { Typekit.load({ async: true }); } catch (e) { }</script>
+<script>
+    (function (d) {
+        var config = {
+                    kitId: 'tcp3qrm',
+                    scriptTimeout: 3000,
+                    async: true
+                },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+    })(document);
+</script>
+</body>
+</html>
