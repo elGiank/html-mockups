@@ -1,0 +1,109 @@
+.alert-actions {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 2rem;
+  width: 85%;
+ }
+
+.alert-actions-counter {
+  color: $color-near-black;
+  align-self: center;
+}
+
+.alert-config {
+  margin-top: 3rem;
+  padding: 0 .75rem;
+}
+
+.alert-config__title {
+  margin: 0;
+  font-weight: 300;
+  display: block;
+  font-size: 1.25rem;
+  color: $color-epiq-blue;
+  padding-bottom: .3rem;
+  border-bottom: 1px solid transparentize($color-slate, .5);
+}
+
+.alert-config__section-title {
+  margin: 1rem 0 0 0;
+  font-size: .75rem;
+  color: #382f2d;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.alert-config__section-description {
+  margin: 0 0 .5rem 0;
+}
+
+.alert-config__options {
+  display: flex;
+  margin: 1.5rem 0;
+}
+
+.alert-config-recipients {
+  position: relative;
+}
+
+.alert-config-recipients__icon {
+  position: absolute;
+  left: .5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(128,128,128,0.60);
+}
+
+.alert-config-recipients__input {
+  border: 0;
+  height: 2rem;
+  padding-left: 2rem;
+  width: 85%;
+  line-height: 2rem;
+  display: block;
+  &[placeholder] {
+    text-overflow: ellipsis;
+  }
+}
+
+.alert-config__include-adversary {
+  margin-top: .25rem;
+}
+
+.alert-config-frequency {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.alert-config-frequency__group-real-time {
+  width: 129px;
+}
+
+.alert-config-frequency__group-daily {
+  width: 154px;
+}
+
+.alert-config-frequency__group-weekly {
+  width: 116px;
+}
+
+.alert-config-frequency__options {
+  list-style: none;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.alert-config-notification-event {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.alert-config-notification-event__text-start {
+  margin-right: .5rem;
+}
+
+.alert-config-notification-event__text-end {
+  margin-left: .5rem;
+}

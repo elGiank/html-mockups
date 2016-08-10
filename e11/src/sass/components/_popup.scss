@@ -1,0 +1,39 @@
+.popup-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(109,109,109,.75);
+}
+
+.popup {
+  @extend .container;
+  background-color: $color-light-grey;
+  border: 1px solid $color-bright-blue;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.28);
+}
+
+.popup-header {
+  color: $color-epiq-blue;
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem 0;
+}
+
+.popup-header__text {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0 .75rem;
+}
+
+.popup-header__main-icon {
+  align-self: center;
+}
+
+.popup-header__close-icon {
+  font-size: 1.5rem;
+  margin-left: auto;
+}

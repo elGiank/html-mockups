@@ -1,23 +1,47 @@
 .btn {
-  display: inline-block;
-  padding: .8rem 1.6rem;
-  border-radius: 3px;
-  font-size: 1.5rem;
-  font-weight: 300;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: .25rem 1rem;
+  color: $color-white;
+  background-color: $color-blue;
+  transition: background-color .4s ease, border .4s ease;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:hover, :active {
+    background-color: $color-orange;
+  }
+}
+.btn__text {
+  font-size: .875rem;
+  pointer-events: none;
+  background-color: transparent;
 }
 
-.btn--contact {
-  align-self: center;
-  transition: all .5s;
-  &:hover {
-    border-color: $color-white;
-    background-color: $color-olive;
-    color: white;
+.btn_icon {}
+
+.btn__caret {
+  margin-left: .5rem;
+}
+
+.btn--clear {
+  background-color: transparent;
+  color: $color-blue;
+  &:hover, :active {
+    background-color: #e5e4e5;
+    color: $color-orange;
   }
 }
 
-.btn--olive-transparent {
-  border: 1px solid $color-olive;
-  color: $color-olive;
+.btn--alert-config {
+  margin-right: 2rem;
 }
 
+.btn--unsubscribe {
+  margin-left: auto;
+}
+
+.btn--select-option {
+
+}

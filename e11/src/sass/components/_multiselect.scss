@@ -1,0 +1,36 @@
+.multiselect {
+  display: inline-block;
+  position: relative;
+}
+
+.multiselect__display {
+  box-sizing: border-box;
+  background-color: white;
+  color: rgba(128, 128, 128, 0.6);
+  padding: .5rem;
+  width: 400px;
+  min-height: 2rem;
+}
+
+.multiselect__display--placeholder {
+  &:not(:focus):before {
+    content: "Enter and Select";
+    vertical-align: sub;
+    padding-left: .5rem;
+  }
+}
+
+.multiselect__list {
+  @extend .select-option-list;
+  left: -2px;
+}
+
+.multiselect__list--selected {
+  color: #cfc9c9;
+}
+
+.multiselect__list-item {
+  @extend .select-option-list__item;
+  @extend .select-option__item-text;
+}
+

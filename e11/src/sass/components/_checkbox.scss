@@ -1,0 +1,14 @@
+
+.checkbox__icon, .checkbox__text,
+.radio-button__icon, .radio-button__text {
+  cursor: pointer;
+}
+.checkbox__icon,
+.radio-button__icon {
+  color: $color-bright-blue;
+}
+
+.checkbox__text,
+.radio-button__text {
+  padding-left: .5rem;
+}

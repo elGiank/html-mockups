@@ -12,8 +12,8 @@ $base-line-height: 24px !default;
 $base-unit: 'rem' !default;
 
 // The default font family.
-$primary-font-family: 'Roboto', sans-serif !default;
-$secondary-font-family: 'Lato', sans-serif !default;
+$primary-font-family: 'proxima-nova', 'Roboto', sans-serif !default;
+$secondary-font-family: 'serifa', 'Lato', sans-serif !default;
 $base-font-family: $primary-font-family;
 
 // The font sizes for h1-h6.
@@ -23,6 +23,12 @@ $h3-font-size: 1.17 * $base-font-size !default;
 $h4-font-size: 1    * $base-font-size !default;
 $h5-font-size: 0.83 * $base-font-size !default;
 $h6-font-size: 0.67 * $base-font-size !default;
+
+//Site font sizes
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
 
 // The amount lists and blockquotes are indented.
 $indent-amount: 40px !default;
@@ -36,12 +42,17 @@ $normalize-vertical-rhythm: false !default;
 
 
 //Colors
-$color-orange: #ee8c25;
-$color-blue: #0d83da;
-$color-white: #fbfbfb;
-$color-silver: #d6d6d6;
-$color-gray: #999;
-$color-slate: #666;
-$color-olive: #3d9970;
-$colo-primary: $color-blue;
-$color-secondary: $color-orange;
+$color-white: #fff;
+$color-light-grey: #f2f2f2;
+$color-slate: #6d6d6d;
+$color-near-black: #382f2d;
+$color-midnight-blue: #0260a3;
+$color-epiq-blue: #003087;
+$color-epiq-blue-light: #0d3b8d;
+$color-blue: #0283c4;
+$color-bright-blue: #009fdf;
+$color-ice-blue: #99d6f0;
+$color-sky-blue: #ddeef5;
+$color-orange: #e87722;
+$color-soft-orange: #f5b439;
+$color-yellow: #f2a900;

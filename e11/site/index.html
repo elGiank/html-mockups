@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Downloader design</title>
+    <title>Docket Alerts design</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/415702625e.css" media="all">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100|Lato:400,700,300,100' rel='stylesheet'
           type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <!--<script src="https://use.fontawesome.com/415702625e.js"></script>-->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -24,13 +23,10 @@
         </div>
         <div class="popup-body">
             <div class="alert-actions">
-                <span class="alert-actions-counter">0 Alerts configured</span>
-                <button class="btn btn-view-all">
-                    <span class="btn__text">View All</span><span class="btn_icon"><i class="fa fa-magnifier"></i></span>
-                </button>
+                <span class="alert-actions-counter"><strong style="font-size: 1.3rem;">5</strong> Alerts configured</span>
                 <div class="select-option select-option--add-alert">
                     <button id="btnAddAlert" class="btn btn-select-option">
-                        <span class="btn__text">Add Alert</span><i class="fa fa-caret-down btn__caret"></i>
+                        <span class="btn__text">Manage Alerts</span><i class="fa fa-caret-down btn__caret"></i>
                     </button>
                     <ul id="selectlistAlerts" class="select-option-list" style="display: none;">
                         <li class="select-option-list__item">
@@ -60,17 +56,90 @@
                     </ul>
                 </div>
             </div>
-            <div class="alert-config">
+            <div class="alert-config" id="allDocketsConfig">
                 <h4 class="alert-config__title">All Docket Updates</h4>
-                <h5 class="alert-config__section-title"></h5>
-                <small class="alert-config__section-description"></small>
-                <input type="text" class="alert-config__recipients" placeholder="jhonsmith@"/>
-                <div class="checkbox">
-                    <i class="fa fa-check checkbox__icon"></i><span class="checkbox__text"></span>
+                <h5 class="alert-config__section-title">recipient email</h5>
+                <p class="alert-config__section-description">Enter emial addresses separated by comas</p>
+                <div class="alert-config-recipients">
+                    <i class="fa fa-envelope alert-config-recipients__icon"></i>
+                    <input type="text" class="alert-config-recipients__input" placeholder="jhonsmith@lawfirm.com"/>
                 </div>
-                <div class="alert-config__section-title"></div>
-                <div class="alert-config__section-description"></div>
+                <div class="checkbox alert-config__include-adversary">
+                    <i class="fa fa-square-o checkbox__icon"></i><span class="checkbox__text">Include Adversary Proceedings</span>
+                </div>
+                <div class="alert-config-notification-event">
+                    <span class="alert-config-notification-event__text-start">Notify me when dockets for</span>
+                    <div class="multiselect">
+                        <div id="txtNotificationEventDisplay" class="multiselect__display" tabindex="0"></div>
+                        <ul id="selectEventoOptions" class="multiselect__list" style="display: none">
+                            <li class="multiselect__list-item">Transfers</li>
+                            <li class="multiselect__list-item">Notices of Hearing</li>
+                            <li class="multiselect__list-item">Agendas</li>
+                            <li class="multiselect__list-item">Fee Applications</li>
+                            <li class="multiselect__list-item">Dockets filed Under Seal</li>
+                            <li class="multiselect__list-item">Any dockets related to Employee Motions or Orders</li>
+                            <li class="multiselect__list-item">Notice of Satisfaction</li>
+                            <li class="multiselect__list-item">Notice of Settlement</li>
+                        </ul>
+                    </div>
+                    <span class="alert-config-notification-event__text-end">are filed</span>
+                </div>
+                <div class="alert-config__section-title">Frecuency</div>
+                <div class="alert-config-frequency">
+                    <div class="alert-config-frequency__group-real-time">
+                        <div id="chkFrequencyRealtime" class="checkbox">
+                            <i class="fa fa-square-o checkbox__icon"></i><span class="checkbox__text">Real Time</span>
+                        </div>
+                        <ul id="itemsRealTime" class="alert-config-frequency__options" style="display: none">
+                            <li class="checkbox">
+                                <i class="fa fa-square-o checkbox__icon"></i><span class="checkbox__text">Email Alerts</span>
+                            </li>
+                            <li class="checkbox">
+                                <i class="fa fa-square-o checkbox__icon"></i><span class="checkbox__text">Text Alerts</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="alert-config-frequency__group-daily">
+                        <div id="chkFrequencyDaily" class="checkbox">
+                            <i class="fa fa-square-o checkbox__icon"></i><span class="checkbox__text">Daily</span>
+                        </div>
+                        <ul id="itemsDaily" class="alert-config-frequency__options" style="display: none">
+                            <li class="radio-button">
+                                <i class="fa fa-circle-o radio-button__icon"></i><span class="radio-button__text">Every Day</span>
+                            </li>
+                            <li class="radio-button">
+                                <i class="fa fa-circle-o radio-button__icon"></i><span class="radio-button__text">Every Weekday</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="alert-config-frequency__group-weekly">
+                        <div id="chkFrequencyWeekly" class="checkbox">
+                            <i class="fa fa-square-o checkbox__icon"></i><span class="checkbox__text">Weekly</span>
+                        </div>
+                        <div id="alertFrequencyWeeklyOptions" class="select-option select-option--alert-frequency"
+                             style="display: none">
+                            <div id="btnAlertFrequency" class="select-option__display" tabindex="0">
+                                <div class="select-option__display-text">Sunday</div>
+                                <div class="select-option__display-icon"><i class="fa fa-caret-down"></i></div>
+                            </div>
+                            <ul id="selectlistAlertFrequency" class="select-option-list" style="display: none;">
+                                <li class="select-option-list__item alertFrequencyItem">Sunday</li>
+                                <li class="select-option-list__item alertFrequencyItem">Monday</li>
+                                <li class="select-option-list__item alertFrequencyItem">Tuesday</li>
+                                <li class="select-option-list__item alertFrequencyItem">Wednesday</li>
+                                <li class="select-option-list__item alertFrequencyItem">Thursday</li>
+                                <li class="select-option-list__item alertFrequencyItem">Friday</li>
+                                <li class="select-option-list__item alertFrequencyItem">Saturday</li>
+                            </ul>
+                        </div>
 
+                    </div>
+                </div>
+                <div class="alert-config__options">
+                    <button class="btn btn--alert-config">SAVE</button>
+                    <button class="btn btn--clear btn--alert-config">CLEAR</button>
+                    <button class="btn btn--clear btn--alert-config btn--unsubscribe">unsubscribe</button>
+                </div>
             </div>
         </div>
         <div class="popup-footer"></div>
