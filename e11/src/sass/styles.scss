@@ -1,7 +1,11 @@
 //Base SCSS file
 
+//Helpers
+@import "helpers/_variables";
+@import "helpers/mixins";
+
 //Base
-@import "base/variables";
+
 @import "base/normalize";
 @import "base/site";
 @import "base/text";

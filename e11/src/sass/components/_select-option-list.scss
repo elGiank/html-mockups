@@ -3,11 +3,20 @@
 }
 
 .select-option--add-alert {
-  margin-left: 1rem;
+  @include bp(md) {
+    margin-left: 1rem;
+  }
 }
 
 .select-option--alert-frequency {
 
+}
+
+.select-option--add-alert {
+  margin-top: 1rem;
+  @include bp(md) {
+    margin-top: unset;
+  }
 }
 
 .select-option__display {

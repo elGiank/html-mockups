@@ -3,19 +3,127 @@
  */
 'use strict';
 
-var alertsConfigFields = {
-    recipients: true,
-    events: true,
-    frequency: true
+var existingAlerts = {
+    allDockets: {
+        selected: true,
+        showEvents: false,
+        eventStarText: '',
+        eventEndText: '',
+        eventItems: []
+    },
+    docketCategory: {
+        selected: false,
+        showEvents: true,
+        eventStarText: 'Notify me when dockets for',
+        eventEndText: 'are filed',
+        eventItems: [
+            'Transfers',
+            'Notices of Hearing',
+            'Agendas',
+            'Fee Applications',
+            'Dockets filed Under Seal',
+            'Any dockets related to Employee Motions or Orders',
+            'Notice of Satisfaction',
+            'Notice of Settlement',
+        ]
+    },
+    debtor: {
+        selected: false,
+        showEvents: true,
+        eventStarText: 'Notify me when dockets under the',
+        eventEndText: 'case are filed',
+        eventItems: [
+            'Transfers',
+            'Notices of Hearing',
+            'Agendas',
+            'Fee Applications',
+            'Dockets filed Under Seal',
+            'Any dockets related to Employee Motions or Orders',
+            'Notice of Satisfaction',
+            'Notice of Settlement',
+        ]
+    },
+    adversaryProceeding: {
+        selected: false,
+        showEvents: true,
+        eventStarText: 'Notify me when dockets under the',
+        eventEndText: 'case are filed',
+        eventItems: [
+            'Transfers',
+            'Notices of Hearing',
+            'Agendas',
+            'Fee Applications',
+            'Dockets filed Under Seal',
+            'Any dockets related to Employee Motions or Orders',
+            'Notice of Satisfaction',
+            'Notice of Settlement',
+        ]
+    },
+    relatedDockets: {
+        selected: false,
+        showEvents: true,
+        eventStarText: 'Notify me when dockets are filed related to dockets number',
+        eventEndText: '',
+        eventItems: [
+            'Transfers',
+            'Notices of Hearing',
+            'Agendas',
+            'Fee Applications',
+            'Dockets filed Under Seal',
+            'Any dockets related to Employee Motions or Orders',
+            'Notice of Satisfaction',
+            'Notice of Settlement',
+        ]
+    },
+    keywords: {
+        selected: false,
+        showEvents: true,
+        eventStarText: 'Notify me when dockets contain',
+        eventEndText: '',
+        eventItems: [
+            'Transfers keywords',
+            'Notices of Hearing keywords',
+            'Agendas keywords',
+            'Fee Applications keywords',
+            'Dockets filed Under Seal',
+            'Any dockets related to Employee Motions or Orders',
+            'Notice of Satisfaction',
+            'Notice of Settlement',
+        ]
+    },
 }
 
-var configuredAlerts = {
-    recipients: 'someone@somewhere.com, someoneelse@somewhereelse.com, noone@nowhere.com',
-    includeAdversary: true,
-    notificationEvents: [
-        'Transfers',
-        'Agendas'
-    ]
+function onAlertChange (newValue) {
+    if (newValue.showEvents === false) {
+        $('.alert-config-notification-event').hide();
+        $('.alert-config__section-title--notification').hide();
+        $('#selectEventoOptions').html('');
+    }
+    else {
+        $('.alert-config-notification-event').show();
+        $('.alert-config__section-title--notification').show();
+        $('#selectEventoOptions').html('');
+        newValue.eventItems.forEach(function (item) {
+            var newEventItem = $('<li class="multiselect__list-item">' + item + '</li>');
+
+            newEventItem.click(function () {
+                $(this).addClass("multiselect__list--selected");
+
+                var newTag = $('<div class="tag-label"><span class="tag-label__text">' + $(this).html() + '</span><span class="tag-label__icon"><i class="fa fa-times-circle"></i></span></div>');
+                newTag.on('click', function () {
+                    $(this).remove();
+                });
+                $('#txtNotificationEventDisplay').append(newTag);
+                $('#selectEventoOptions').hide();
+            });
+
+            $('#selectEventoOptions').append(newEventItem);
+        });
+    }
+
+    $('.alert-config-notification-event__text-start').text(newValue.eventStarText);
+    $('.alert-config-notification-event__text-end').text(newValue.eventEndText);
+
 }
 
 jQuery(document).ready(function () {
@@ -26,6 +134,14 @@ jQuery(document).ready(function () {
             $('#selectlistAlerts').show();
     });
 
+    $('.alertTypeItem').click(function () {
+        var objName = this.id;
+        onAlertChange(existingAlerts[objName]);
+        $('#selectlistAlerts').hide();
+        $('.alert-config__title').text($(this).find('div.select-option__item-text').html());
+
+    })
+    
     $('.checkbox').click(function () {
         var controlIcon = $(this).find('i');
         if(controlIcon.hasClass('fa-square-o')) {
@@ -55,17 +171,12 @@ jQuery(document).ready(function () {
             $('#selectEventoOptions').show();
     });
 
-    $('.multiselect__list-item').click(function () {
-        $(this).addClass("multiselect__list--selected");
-
-        var newTag = $('<div class="tag-label"><span class="tag-label__text">' + $(this).html() + '</span><span class="tag-label__icon"><i class="fa fa-times-circle"></i></span></div>');
-        newTag.on('click', function () {
-            $(this).remove();
-        });
-
-        $('#txtNotificationEventDisplay').append(newTag);
-        $('#selectEventoOptions').hide();
-    });
+    // $('.multiselect__list-item').click(function () {
+    //     $(this).addClass("multiselect__list--selected");
+    //
+    //     var newTag = $('<div class="tag-label"><span class="tag-label__text">' + $(this).html() + '</span><span
+    // class="tag-label__icon"><i class="fa fa-times-circle"></i></span></div>'); newTag.on('click', function () {
+    // $(this).remove(); });  $('#txtNotificationEventDisplay').append(newTag); $('#selectEventoOptions').hide(); });
 
     $('#btnAlertFrequency').click(function () {
         if($('#selectlistAlertFrequency').is(':visible'))
@@ -100,5 +211,9 @@ jQuery(document).ready(function () {
         else
             $('#alertFrequencyWeeklyOptions').show();
     });
-    
+
 });
+
+
+
+

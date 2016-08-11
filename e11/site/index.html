@@ -23,33 +23,33 @@
         </div>
         <div class="popup-body">
             <div class="alert-actions">
-                <span class="alert-actions-counter"><strong style="font-size: 1.3rem;">5</strong> Alerts configured</span>
+                <span class="alert-actions-counter">5 Alerts configured</span>
                 <div class="select-option select-option--add-alert">
                     <button id="btnAddAlert" class="btn btn-select-option">
                         <span class="btn__text">Manage Alerts</span><i class="fa fa-caret-down btn__caret"></i>
                     </button>
                     <ul id="selectlistAlerts" class="select-option-list" style="display: none;">
-                        <li class="select-option-list__item">
+                        <li class="select-option-list__item alertTypeItem" id="allDockets">
                             <div class="select-option__item-text">All Dockets Updates</div>
                             <div class="select-option__item-icon"><i class="fa fa-plus"></i></div>
                         </li>
-                        <li class="select-option-list__item">
+                        <li class="select-option-list__item alertTypeItem" id="docketCategory">
                             <div class="select-option__item-text">Docket Category</div>
                             <div class="select-option__item-icon"><i class="fa fa-pencil"></i></div>
                         </li>
-                        <li class="select-option-list__item">
+                        <li class="select-option-list__item alertTypeItem" id="debtor">
                             <div class="select-option__item-text">Debtor</div>
                             <div class="select-option__item-icon"><i class="fa fa-plus"></i></div>
                         </li>
-                        <li class="select-option-list__item">
+                        <li class="select-option-list__item alertTypeItem" id="adversaryProceeding">
                             <div class="select-option__item-text">Adversary Proceeding</div>
                             <div class="select-option__item-icon"><i class="fa fa-plus"></i></div>
                         </li>
-                        <li class="select-option-list__item">
+                        <li class="select-option-list__item alertTypeItem" id="relatedDockets">
                             <div class="select-option__item-text">Related Dockets</div>
                             <div class="select-option__item-icon"><i class="fa fa-pencil"></i></div>
                         </li>
-                        <li class="select-option-list__item">
+                        <li class="select-option-list__item alertTypeItem" id="keywords">
                             <div class="select-option__item-text">Keyword</div>
                             <div class="select-option__item-icon"><i class="fa fa-plus"></i></div>
                         </li>
@@ -58,7 +58,7 @@
             </div>
             <div class="alert-config" id="allDocketsConfig">
                 <h4 class="alert-config__title">All Docket Updates</h4>
-                <h5 class="alert-config__section-title">recipient email</h5>
+                <h5 class="alert-config__section-title alert-config__section-title--first-line">recipient email</h5>
                 <p class="alert-config__section-description">Enter emial addresses separated by comas</p>
                 <div class="alert-config-recipients">
                     <i class="fa fa-envelope alert-config-recipients__icon"></i>
@@ -67,7 +67,8 @@
                 <div class="checkbox alert-config__include-adversary">
                     <i class="fa fa-square-o checkbox__icon"></i><span class="checkbox__text">Include Adversary Proceedings</span>
                 </div>
-                <div class="alert-config-notification-event">
+                <h5 class="alert-config__section-title alert-config__section-title--notification" style="display: none">Notificaction Events</h5>
+                <div class="alert-config-notification-event" style="display: none">
                     <span class="alert-config-notification-event__text-start">Notify me when dockets for</span>
                     <div class="multiselect">
                         <div id="txtNotificationEventDisplay" class="multiselect__display" tabindex="0"></div>
@@ -84,7 +85,7 @@
                     </div>
                     <span class="alert-config-notification-event__text-end">are filed</span>
                 </div>
-                <div class="alert-config__section-title">Frecuency</div>
+                <h5 class="alert-config__section-title">Frecuency</h5>
                 <div class="alert-config-frequency">
                     <div class="alert-config-frequency__group-real-time">
                         <div id="chkFrequencyRealtime" class="checkbox">

@@ -1,6 +1,7 @@
 .multiselect {
   display: inline-block;
   position: relative;
+  flex-grow: 1;
 }
 
 .multiselect__display {
@@ -8,7 +9,7 @@
   background-color: white;
   color: rgba(128, 128, 128, 0.6);
   padding: .5rem;
-  width: 400px;
+  width: 100%;
   min-height: 2rem;
 }
 
