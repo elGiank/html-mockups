@@ -164,6 +164,24 @@ jQuery(document).ready(function () {
         }
     });
 
+    $('#chkRecipietMail').click(function () {
+        var controlIcon = $(this).find('i');
+        if(controlIcon.hasClass('fa-square-o')) {
+            $('.recipientMail').hide();
+        } else {
+            $('.recipientMail').show();
+        }
+    });
+
+    $('#chkRecipietMobile').click(function () {
+        var controlIcon = $(this).find('i');
+        if(controlIcon.hasClass('fa-square-o')) {
+            $('.recipientMobile').hide();
+        } else {
+            $('.recipientMobile').show();
+        }
+    });
+
     $('#txtNotificationEventDisplay').click(function () {
         if($('#selectEventoOptions').is(':visible'))
             $('#selectEventoOptions').hide();
@@ -171,12 +189,6 @@ jQuery(document).ready(function () {
             $('#selectEventoOptions').show();
     });
 
-    // $('.multiselect__list-item').click(function () {
-    //     $(this).addClass("multiselect__list--selected");
-    //
-    //     var newTag = $('<div class="tag-label"><span class="tag-label__text">' + $(this).html() + '</span><span
-    // class="tag-label__icon"><i class="fa fa-times-circle"></i></span></div>'); newTag.on('click', function () {
-    // $(this).remove(); });  $('#txtNotificationEventDisplay').append(newTag); $('#selectEventoOptions').hide(); });
 
     $('#btnAlertFrequency').click(function () {
         if($('#selectlistAlertFrequency').is(':visible'))
@@ -191,12 +203,12 @@ jQuery(document).ready(function () {
         $('#selectlistAlertFrequency').hide();
     });
 
-    $('#chkFrequencyRealtime').click(function () {
-        if($('#itemsRealTime').is(':visible'))
-            $('#itemsRealTime').hide();
-        else
-            $('#itemsRealTime').show();
-    });
+    // $('#chkFrequencyRealtime').click(function () {
+    //     if($('#itemsRealTime').is(':visible'))
+    //         $('#itemsRealTime').hide();
+    //     else
+    //         $('#itemsRealTime').show();
+    // });
 
     $('#chkFrequencyDaily').click(function () {
         if($('#itemsDaily').is(':visible'))

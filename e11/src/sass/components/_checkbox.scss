@@ -1,3 +1,15 @@
+.checkbox--include-adversary {
+  margin-top: .25rem;
+}
+
+.checkbox--section-tittle {
+  display: inline-block;
+  font-size: 1rem;
+  @include bp(md) {
+    font-size: inherit;
+    margin-left: 1rem;
+  }
+}
 
 .checkbox__icon, .checkbox__text,
 .radio-button__icon, .radio-button__text {
@@ -11,4 +23,8 @@
 .checkbox__text,
 .radio-button__text {
   padding-left: .5rem;
+}
+
+.checkbox__text--section-title {
+  padding-left: .25rem;
 }

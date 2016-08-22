@@ -41,16 +41,21 @@
   border-bottom: 1px solid transparentize($color-slate, .5);
 }
 
-.alert-config__section-title {
+.alert-config-section-title {
   margin: 1rem 0 0 0;
+  text-transform: uppercase;
   line-height: .75rem;
   font-size: .75rem;
-  color: #382f2d;
   font-weight: 700;
-  text-transform: uppercase;
+  color: #382f2d;
+  display: flex;
+  justify-content: space-between;
+  @include bp(md) {
+    justify-content: flex-start;
+  }
 }
 
-.alert-config__section-title--first-line {
+.alert-config-section-title--first-line {
   margin-top: .5rem;
 }
 
@@ -65,6 +70,10 @@
 
 .alert-config-recipients {
   position: relative;
+}
+
+.alert-config-recipients--mobile {
+  width: 200px;
 }
 
 .alert-config-recipients__icon {
@@ -85,10 +94,6 @@
   &[placeholder] {
     text-overflow: ellipsis;
   }
-}
-
-.alert-config__include-adversary {
-  margin-top: .25rem;
 }
 
 .alert-config-frequency {
